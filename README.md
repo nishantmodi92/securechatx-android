@@ -1,5 +1,6 @@
-💬  ChatConnect – Real-Time Encrypted Messaging (25K+ Users)
+💬  SecureChatX – Real-Time Encrypted Messaging (25K+ Users)
 <p> <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"/> <img src="https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white"/> <img src="https://img.shields.io/badge/Firebase-FEC007?style=for-the-badge&logo=firebase&logoColor=black"/> <img src="https://img.shields.io/badge/Hilt-4A148C?style=for-the-badge"/> <img src="https://img.shields.io/badge/FCM-0078D4?style=for-the-badge"/> <img src="https://img.shields.io/badge/WorkManager-1E88E5?style=for-the-badge"/> </p>
+
 📊 Key Metrics
 
 ⚡ <300ms real-time message delivery
