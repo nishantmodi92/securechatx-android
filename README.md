@@ -95,7 +95,7 @@ Data Sources
 
 ## ⚙ Installation
 ```bash
-git clone https://github.com/nishantmodi92/chatconnect-android
+git clone https://github.com/nishantmodi92/securechatx-android
 open in Android Studio
 sync Gradle → run app
 
