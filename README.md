@@ -1,4 +1,4 @@
- 💬  <h1 align="center">ChatConnect — Real-Time Chat App</h1>
+   <h1 align="center">ChatConnect — Real-Time Chat App</h1>
 
 <p align="center">
 A high-performance real-time messaging app built with Kotlin, Jetpack Compose, Firebase, and scalable Clean Architecture.
@@ -109,6 +109,13 @@ sync Gradle → run app
 /utils
 
 
+🧭 Roadmap
+
+Voice & video calling
+
+Message reactions
+
+Multi-device sync
 
 
 👤 Author
