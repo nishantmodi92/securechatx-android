@@ -1,124 +1,128 @@
-   <h1 align="center">ChatConnect — Real-Time Chat App</h1>
-
-<p align="center">
-A high-performance real-time messaging app built with Kotlin, Jetpack Compose, Firebase, and scalable Clean Architecture.
-</p>
-
----
-
-## 🔥 Badges
-![Kotlin](https://img.shields.io/badge/Kotlin-1.9-blue)
-![Compose](https://img.shields.io/badge/Jetpack%20Compose-Stable-green)
-![Firebase](https://img.shields.io/badge/Firebase-Realtime%20Database-orange)
-![Architecture](https://img.shields.io/badge/Clean%20Architecture-Yes-blueviolet)
-![Crash Free](https://img.shields.io/badge/Crash%20Free-98%25-success)
-![Performance](https://img.shields.io/badge/Cold%20Start-280ms-brightgreen)
-
----
+# ChatConnect – Real-Time Chat & Messaging App
 
 ## 🚀 Overview
-**ChatConnect** is a real-time chat system designed for high-scale messaging with typing indicators, delivery receipts, push notifications, and full offline-first support.
+ChatConnect is a high-performance, real-time messaging app built using Kotlin, Jetpack Compose, WebSockets, and a fully offline-first architecture.  
+It is designed to handle instant message delivery, synchronization conflicts, and secure encrypted communication even on unstable networks.
 
-It mirrors the architecture used in modern production chat apps (WhatsApp / Slack-style).
-
----
-
-## ⭐ Key Metrics
-- ⚡ **<300ms message delivery**
-- 🔄 **Offline-first sync + conflict resolution**
-- 📉 **98% crash-free sessions**
-- 🔐 **End-to-end secure data flow**
-- 📦 **Modular + scalable clean architecture**
-
----
-
-## 🧩 Core Features
-- Real-time 1:1 & group messaging  
-- Online/offline presence  
-- Typing indicators  
-- Read receipts  
-- Firebase Auth + Firestore  
-- Push notifications with FCM  
-- Media sharing  
-- Chat search  
-- Dark/Light mode  
-- Optimized Compose UI (60fps)
+This project demonstrates:
+- Real-time bidirectional messaging
+- WebSocket-based live updates
+- Full offline mode with mutation queues
+- AES-256 encryption for secure chats
+- Modular Clean Architecture in production style
 
 ---
 
 ## 🛠 Tech Stack
-- **Kotlin**, **Coroutines**, **Flow**  
-- **Jetpack Compose**, Material 3  
-- **Firebase Auth, Firestore, FCM**  
-- **Hilt (DI)**  
-- **Accompanist**, **Coil**  
-- **Clean Architecture + MVVM**
+-### Tech & Tools
 
----
-## 🧱 Architecture Diagram
-
-Presentation (Compose UI)
-
-↓
-
-ViewModel (StateFlow)
-
-↓
-
-Use Cases
-
-↓
-
-Repository (Interface)
-
-↓
-
-Data Sources
-
-• Firebase Auth
-
-• Firestore
-
-• FCM
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Coroutines](https://img.shields.io/badge/Coroutines-00BFFF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Flows](https://img.shields.io/badge/Flows-FF69B4?style=for-the-badge&logo=kotlin&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=android&logoColor=white)
+![WebSockets](https://img.shields.io/badge/WebSockets-8A2BE2?style=for-the-badge&logo=websocket&logoColor=white)
+![Room Database](https://img.shields.io/badge/Room-FF6F61?style=for-the-badge&logo=sqlite&logoColor=white)
+![WorkManager](https://img.shields.io/badge/WorkManager-00C853?style=for-the-badge&logo=android&logoColor=white)
+![Hilt DI](https://img.shields.io/badge/Hilt-D32F2F?style=for-the-badge&logo=android&logoColor=white)
+![AES-256 + Keystore](https://img.shields.io/badge/AES--256_Keystore-FF9800?style=for-the-badge&logo=lock&logoColor=white)
+![Clean Architecture](https://img.shields.io/badge/Clean%20Architecture-03A9F4?style=for-the-badge&logo=architecture&logoColor=white)
 
 
 ---
 
-## 🏗 System Design Summary
-- Firestore for real-time data  
-- FCM for notifications  
-- Offline cache using local Room DB  
-- Conflict resolution with server timestamps  
-- Linted, modular, scalable package structure  
+## 🧩 Architecture
+
+app
+│
+├── core/
+│ ├── network/ (WebSocket, API)
+│ ├── storage/ (Room, Preferences)
+│ ├── encryption/ (AES, Keystore)
+│ └── utils/
+│
+├── data/
+│ ├── repository/
+│ ├── datasource-local/
+│ └── datasource-remote/
+│
+├── domain/
+│ ├── model/
+│ └── usecase/
+│
+└── feature-chat/
+├── ui/
+├── viewmodel/
+└── model/
+
 
 ---
 
-## ⚙ Installation
-```bash
-git clone https://github.com/nishantmodi92/securechatx-android
-open in Android Studio
-sync Gradle → run app
+## ⭐ Core Features
+- One-to-one real-time chat  
+- Message delivery receipts (Sent, Delivered, Read)  
+- Offline mode with queued messages  
+- Automatic WorkManager sync  
+- Local encryption for messages  
+- Optimized Compose UI for large threads  
+
+---
+
+## 🗄 Database Schema Example
+```kotlin
+@Entity(tableName = "messages")
+data class MessageEntity(
+  @PrimaryKey val id: String,
+  val chatId: String,
+  val body: String,
+  val senderId: String,
+  val timestamp: Long,
+  val status: Int
+)
+
+🔄 Background Sync Example
+class MessageSyncWorker (...) : CoroutineWorker(...) {
+    override suspend fun doWork(): Result {
+        repo.syncPendingMessages()
+        return Result.success()
+    }
+}
+
+🔒 Security
+
+AES-GCM encryption for message bodies
+
+Keystore-protected master key
+
+TLS-only communication
+
+Token rotation + strict validation
 
 
+📈 Performance Highlights
 
-📁 Folder Structure
-/data
-/domain
-/ui
-/di
-/utils
+Recycler-less inbox (Compose Lazy Lists)
+
+Local caching for zero-latency messages
+
+Optimized WebSocket reconnection strategy
+
+Baseline Profiles for faster startup
+
+🚀 Setup
+
+Open in Android Studio
+
+Configure WebSocket URL in NetworkModule
+
+Run on device or emulator
 
 
-🧭 Roadmap
+📡 System Design Summary
 
-Voice & video calling
+Realtime Layer: WebSocket
 
-Message reactions
+Offline Layer: Room + Mutation Queue
 
-Multi-device sync
+Sync Layer: WorkManager periodic + on-demand
 
-
-👤 Author
-Nishant Modi
-Senior Android Developer
-Portfolio: nishantmodi92.github.io
+Conflict Handling: Timestamp + clientSeq
