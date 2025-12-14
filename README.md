@@ -163,7 +163,7 @@ All AI runs **on‑device or via SDK inference** (no raw data leakage).
 
 ## 🔗 GitHub Repository
 
-👉 [https://github.com/nishantmodi92/ChatConnect](https://github.com/nishantmodi92/ChatConnect)
+👉 https://github.com/nishantmodi92/securechatx-android
 
 ---
 
