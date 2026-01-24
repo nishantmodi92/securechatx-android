@@ -1,42 +1,29 @@
-# 💬 ChatConnect — Distributed Real-Time Messaging System
-Why This Project Matters
-
-Modern messaging systems must work reliably under high concurrency, unstable networks, and strict latency requirements. ChatConnect demonstrates how to design offline-first, real-time mobile systems that remain correct, performant, and secure at scale.
-
-Description
-
-ChatConnect is a production-grade Android messaging platform supporting encrypted, real-time communication with deterministic offline synchronization. The system is optimized for scale, low latency, and reliability.
+# 💬 Description
+Production‑grade, end‑to‑end encrypted, offline‑capable real‑time messaging platform designed for high throughput and low latency communication.
 
 Impact
 
-Designed for 100K+ users and 5M+ messages/day
+Supports 100K+ users and 5M+ messages/day
 
-Maintains message consistency across offline/online transitions
+Achieved <300ms P99 latency with 99%+ reliability
 
-Achieved <300ms P99 latency in real-time message delivery
+Key Engineering Highlights
 
-Architecture Highlights
+Deterministic offline‑first sync engine
 
-Offline-first data model with deterministic conflict resolution
+Protobuf‑based messaging (40% payload reduction)
 
-Protobuf-based network layer for reduced payload size
+Efficient pagination & in‑memory caching
 
-Efficient pagination and in-memory caching strategies
-
-Real-time communication via WebSockets
-
-AI-assisted features implemented with strict guardrails
+AI‑powered smart replies, summarization & moderation
 
 Tech Stack
-
 Kotlin, Jetpack Compose, MVVM, Coroutines, Flow, WebSockets, Protobuf, Firebase
 
 Metrics
 
-40% reduced network usage
+40% lower network usage
 
 30% faster message load times
-
-99%+ crash-free sessions
 
 🔗 GitHub: https://github.com/nishantmodi92/securechatx-android
