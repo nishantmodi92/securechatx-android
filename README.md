@@ -1,4 +1,5 @@
-# 💬 Description
+# 💬 ChatConnect v2.0 — Distributed Real‑Time Messaging System
+
 Production‑grade, end‑to‑end encrypted, offline‑capable real‑time messaging platform designed for high throughput and low latency communication.
 
 Impact
