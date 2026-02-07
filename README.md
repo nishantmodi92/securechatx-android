@@ -1,30 +1,17 @@
-# 💬 ChatConnect v2.0 — Distributed Real‑Time Messaging System
+### 💬 ChatConnect v2.0 — Distributed Real-Time Messaging Platform
 
-Production‑grade, end‑to‑end encrypted, offline‑capable real‑time messaging platform designed for high throughput and low latency communication.
+Production-grade, end-to-end encrypted, **offline-capable real-time messaging system**
+designed for **high throughput and low latency**.
 
-Impact
+**Impact**
+- 100K+ users • 5M+ messages/day
+- <300ms P99 latency • 99%+ reliability
 
-Supports 100K+ users and 5M+ messages/day
+**Key Engineering Highlights**
+- Deterministic offline-first sync engine
+- Protobuf-based messaging (40% payload reduction)
+- In-memory caching & efficient pagination
+- AI-powered smart replies & summarization
 
-Achieved <300ms P99 latency with 99%+ reliability
-
-Key Engineering Highlights
-
-Deterministic offline‑first sync engine
-
-Protobuf‑based messaging (40% payload reduction)
-
-Efficient pagination & in‑memory caching
-
-AI‑powered smart replies, summarization & moderation
-
-Tech Stack
-Kotlin, Jetpack Compose, MVVM, Coroutines, Flow, WebSockets, Protobuf, Firebase
-
-Metrics
-
-40% lower network usage
-
-30% faster message load times
-
-🔗 GitHub: https://github.com/nishantmodi92/securechatx-android
+**Tech**
+Kotlin • Jetpack Compose • Coroutines • Flow • WebSockets • Protobuf • Firebase
